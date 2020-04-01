@@ -3,24 +3,24 @@ var ctx=c.getContext('2d');
 var result = {Line1: 0, Line2: 0,Line3: 0,Line4: 0,Line5: 0,Line6: 0,Line7: 0,Line8: 0,Line9: 0,Line10: 0,Line11: 0,Line12: 0,Line13: 0,Line14: 0,Line15: 0};
 var offsetX=c.offsetLeft;
 var offsetY=c.offsetTop;
-var canvasHeight = 280;
-var canvasWidth = 280;
+var canvasHeight = c.getAttribute('height');
+var canvasWidth = c.getAttribute('width');
 var score = 0;
 var color1 = "GREY";
 var color2 = "transparent";
 var color3 = "green";
-var x1 = canvasHeight-260;
-var y1 = canvasWidth-140;
-var x2 = canvasHeight-200;
-var y2 = canvasWidth-80;
-var x3 = canvasHeight-80;
-var y3 = canvasWidth-80;
-var x4 = canvasHeight-20;
-var y4 = canvasWidth-140;
-var x5 = canvasHeight-80;
-var y5 = canvasWidth-200;
-var x6 = canvasHeight-200;
-var y6 = canvasWidth-200;
+var x1 = canvasHeight/14;
+var y1 = canvasWidth/2;
+var x2 = canvasHeight/3.5;
+var y2 = canvasWidth/1.4;
+var x3 = canvasHeight/1.4;
+var y3 = canvasWidth/1.4;
+var x4 = canvasHeight/1.07692308;
+var y4 = canvasWidth/2;
+var x5 = canvasHeight/1.4;
+var y5 = canvasWidth/3.5;
+var x6 = canvasHeight/3.5;
+var y6 = canvasWidth/3.5;
 var lineRect1=defineLineAsRect(x1,y1,x2,y2,4);
 drawLine(x1,y1,x2,y2,3,color1);
 var lineRect2=defineLineAsRect(x2,y2,x3,y3,4);
@@ -126,14 +126,12 @@ function gameOver()  {
 function click(e){
   mouseX=parseInt(e.clientX-offsetX);
   mouseY=parseInt(e.clientY-offsetY);
-
-  
-  if((mouseX != x5-60 && mouseY != y1)&&(mouseX != x2 && mouseY != y1-20)&&(mouseX != x2-1 && mouseY != y1-19)&&
-(mouseX != x3-92 && mouseY != y3-91)&&(mouseX != x3-91 && mouseY != y3-90)&&(mouseX != x3-90 && mouseY != y3-31)&&
-(mouseX != x3-88 && mouseY != y3-30)&&(mouseX != x3-61 && mouseY != y1-41)&&(mouseX != x6+60 && mouseY != y6+20)&&
-(mouseX != x6+61 && mouseY != y6+21)&&(mouseX != x5-30 && mouseY != y5+31)&&(mouseX != x5-31 && mouseY != y5+30)&&
-(mouseX != x5-29 && mouseY != y5+29)&&(mouseX != x5&& mouseY != y5+39)&&(mouseX != x5-1 && mouseY != y5+40)&&
-(mouseX != x5+1 && mouseY != y5+41)&&(mouseX != x2-2 && mouseY != y2-62)&&(mouseX != x2-1 && mouseY != y2-61)){
+  if((mouseX != x5/4 && mouseY != y1)&&(mouseX != x2 && mouseY != y1/1.16666667)&&(mouseX != x2/1.0502513&& mouseY != y1/1.15702479)&&
+(mouseX != x3/1.85185185 && mouseY != y3/1.83486239)&&(mouseX != x3/1.83486239 && mouseY != y3/1.81818182)&&(mouseX != x3/1.81818182 && mouseY != y3/1.18343195)&&
+(mouseX != x3/1.78571429 && mouseY != y3/1.17647059)&&(mouseX != x3/1.43884892 && mouseY != y1/1.41414141)&&(mouseX != y1 && mouseY != y1/1.4)&&
+(mouseX != y1/1.41843972 && mouseY != y1/1.38613861)&&(mouseX != x5/1.17647059 && mouseY != y1/1.26126126)&&(mouseX != x5/1.18343195 && mouseY != y1/1.26126126)&&
+(mouseX != x5/1.16959064 && mouseY != y1/1.28440367)&&(mouseX != x5&& mouseY != y1/1.17647059)&&(mouseX != x5/1.00502513 && mouseY != y1/1.16666667)&&
+(mouseX != x4/1.29353234 && mouseY != y1/1.15702479)&&(mouseX != x2/1.02564103 && mouseY != y2/1.44927536)&&(mouseX != x2/1.01265823 && mouseY != y2/1.43884892)){
     if(result['Line1'] == 0){
       drawLineAsRect(lineRect1,color2);
       if(ctx.isPointInPath(mouseX,mouseY)){
